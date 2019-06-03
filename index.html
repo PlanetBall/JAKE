@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>	</title>
+	<style type="text/css">
+		.window{
+			height: 400px;
+			width:400px;
+			background-color: green;
+			position: absolute;
+			top:-50%;
+			transition: 1s;
+			left:40%;
+		}
+	</style>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+	<div class="game">
+		<h1 class="text-center">POINTS</h1>
+		<h1 class="points text-center">0</h1>
+		
+
+		<div class="container">
+			<div class="row">
+				<div class="col-3 border" style="height: 300px; background: #fbbb11">
+					<img class="jake w-75" src="jake.png" alt="" style="display: none">
+					<img class="king w-75" src="Ice_King.png" alt="" style="display: none">
+				</div>
+				<div class="col-3 border" style="height: 300px; background: #fbbb11">
+					<img class="jake" src="jake.png"  alt="" style="display: none">
+					<img class="king w-75" src="Ice_King.png" alt="" style="display: none">
+				</div>
+				<div class="col-3 border" style="height: 300px; background: #fbbb11">
+					<img class="jake" src="jake.png"  alt="" style="display: none">
+					<img class="king w-75" src="Ice_King.png" alt="" style="display: none">
+				</div>
+				<div class="col-3 border" style="height: 300px; background: #fbbb11">
+					<img class="jake" src="jake.png"  alt="" style="display: none">
+					<img class="king w-75" src="Ice_King.png" alt="" style="display: none">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-3 border" style="height: 300px; background: #fbbb11">
+					<img class="jake" src="jake.png" alt="" style="display: none">
+					<img class="king w-75" src="Ice_King.png" alt="" style="display: none">
+				</div>
+				<div class="col-3 border" style="height: 300px; background: #fbbb11">
+					<img class="jake" src="jake.png"  alt="" style="display: none">
+					<img class="king w-75" src="Ice_King.png" alt="" style="display: none">
+				</div>
+				<div class="col-3 border" style="height: 300px; background: #fbbb11">
+					<img class="jake" src="jake.png"  alt="" style="display: none">
+					<img class="king w-75" src="Ice_King.png" alt="" style="display: none">
+				</div>
+				<div class="col-3 border" style="height: 300px; background: #fbbb11">
+					<img class="jake" src="jake.png"  alt="" style="display: none">
+					<img class="king w-75" src="Ice_King.png" alt="" style="display: none">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="window"></div>
+
+
+	<script>
+	let jk = document.querySelectorAll(".jake")
+	let kg = document.querySelectorAll(".king")
+	let fy = function(arq){
+		let ran = Math.random()*arq;
+		let rand = Math.round(ran)
+		return rand
+	}
+	let point = 0
+	let pnt = document.querySelector(".points")
+
+	for(let index = 0; index<8; index = index + 1){
+		jk[index].onclick = function(){
+			point = point + 1
+			pnt.innerHTML = point
+		}
+	}
+	
+	for(let index = 0; index<8; index = index + 1){
+		kg[index].onclick = function(){
+			point = point - 2
+			pnt.innerHTML = point
+		}
+	}
+
+	let timer = function(){
+		jk[fy(8)].style.display = "block"
+		time = function(){
+			jk[0].style.display = "none"
+			jk[1].style.display = "none"
+			jk[2].style.display = "none"
+			jk[3].style.display = "none"
+			jk[4].style.display = "none"
+			jk[5].style.display = "none"
+			jk[6].style.display = "none"
+			jk[7].style.display = "none"
+		}
+		setTimeout(time,1000)
+	}
+
+	let timerkg = function(){
+		kg[fy(8)].style.display = "block"
+		time = function(){
+			kg[0].style.display = "none"
+			kg[1].style.display = "none"
+			kg[2].style.display = "none"
+			kg[3].style.display = "none"
+			kg[4].style.display = "none"
+			kg[5].style.display = "none"
+			kg[6].style.display = "none"
+			kg[7].style.display = "none"
+		}
+		setTimeout(time,2000)
+	}
+
+	let lel = setInterval(timer,1100)
+	let kek = setInterval(timerkg,2200)
+
+	</script>
+</body>
+</html>
